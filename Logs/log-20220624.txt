@@ -1,0 +1,5 @@
+2022-06-24T16:21:22.8699639-03:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2022-06-24T16:21:22.8829828-03:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2022-06-24T16:21:22.8833346-03:00  [INF] Hosting environment: "Development" (c3307c92)
+2022-06-24T16:21:22.8835346-03:00  [INF] Content root path: "F:\Edinaldo\CursoInformática_Senac\Módulo_2\UC06\projetohotsite" (b5d60022)
+2022-06-24T16:53:11.8185059-03:00  [INF] Application is shutting down... (90f52c38)
