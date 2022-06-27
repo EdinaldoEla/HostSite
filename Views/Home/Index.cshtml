@@ -1,43 +1,205 @@
 ﻿@model Interesse
-@{
-    ViewData["Title"] = "Hotsite";
-}
 
-<div>
-    <h1>Iniciativa Saúde da Cidade</h1>
-    <p>
-        Texto sobre vida saudável: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.
-    </p>
-    <p>
-        Texto sobre vida iniciativa: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.
-    </p>
+<div class="row">
+    <div class="col-md-6 mt-3">
+        <h1>Iniciativa Saúde da Cidade</h1>
+        <h5 class="text-justify mt-2">
+            Texto sobre vida saudável: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos
+            at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.
+        </h5>
+        <h5 class="text-justify">
+            Texto sobre vida iniciativa: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos
+            at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.
+        </h5>
+    </div>
+    <div class="col-md-6 mt-3">
+        <img src="~/imagens/img1.png" class="d-bloc w-100">
+    </div>
 </div>
 
-<div>
-    <h2>Entre em contato!:</h2>
-    <p>Nos mande uma mensagem e fique por dentro de nossos eventos</p>
+<div class="row">
+    <div class="col-md-6 mt-2">
+        <div class="card border-primary">
+            <h2 class="ml-2">Entre em contato!:</h2>
+            <h6 class="text-justify ml-2">Nos mande uma mensagem e fique por dentro de nossos eventos</h6>
+            <p class="text-danger"> @ViewData["Mensagem"]</p>
 
-    <form action="/Home/Cadastrar" method="POST">
-        <div>
-            <label asp-for="Nome">Nome:</label>
-            <input asp-for="Nome" />
+            <form action="/Home/Cadastrar" method="POST">
+                <div class="form-group ml-2 mr-2">
+                    <label asp-for="Nome">Nome:</label>
+                    <input asp-for="Nome" class="form-control" required />
+                </div>
+
+                <div class="form-group ml-2 mr-2">
+                    <label asp-for="Email">Email:</label>
+                    <input asp-for="Email" class="form-control" required />
+                </div>
+                <div class="form-group ml-2 mr-2">
+                    <label asp-for="Mensagem">Mensagem (Opcional)</label>
+                    <textarea asp-for="Mensagem" class="form-control"></textarea>
+                </div>
+                <div class="form-group ml-2 mB-2">
+                    <input type="submit" value="Enviar" class="btn btn-primary btn-lg mt-2" />
+                </div>
+            </form>
         </div>
-        <div>
-            <label asp-for="Email">Email:</label>
-            <input asp-for="Email" />
+    </div>
+    <div class="col-md-6 mt-2">
+        <div class="card-group">
+            <div class="card">
+                <img src="imagens/img2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Consulte nossa agenda de eventos e encontre o que melhor se adapta a sua
+                        realidade.</h5>
+                </div>
+                <div class="card-footer">
+                    <a href="#" data-toggle="modal" data-target=#Agenda>Agenda de eventos</a>
+                </div>
+            </div>
+            <div class="card ml-2">
+                <img src="imagens/img3.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Conheça as dicas que preparamos para que você tenha uma Vida saudável.</h5>
+                </div>
+                <div class="card-footer">
+                    <a href="#" data-toggle="modal" data-target=#Apoiadores>Lista de Apoiadores</a>
+                </div>
+            </div>
+            <div class="card ml-2">
+                <img src="imagens/img4.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Nossos Apoiadores estão prontos a te dar o suporte que você precisa.</h5>
+                </div>
+                <div class="card-footer">
+                    <a href="#" data-toggle="modal" data-target=#Dicas>Dicas de vida saudável</a>
+                </div>
+            </div>
         </div>
-        <div>
-            <label asp-for="Mensagem">Mensagem (opcional):</label>
-            <textarea asp-for="Mensagem"></textarea>
-        </div>
-        <div>
-            <input type="submit" value="Enviar" />
-        </div>
-    </form>
+
+    </div>
 </div>
 
-<div>
-    <a href="#">Agenda de eventos</a>
-    <a href="#">Dicas de vida saudável</a>
-    <a href="#">Apoiadores</a>
+<!-- Modal -->
+<!-- Agenda -->
+<div class="modal fade" id="Agenda" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agenda</h5>
+                <button type="button" class="close" data-dismiss="modal"></button>
+                <!--<span>X</span>
+                <span>&times;</span>-->
+            </div>
+            <div class="modal-body">
+                <p>12/04/2022 - 08:15 - Evento 1</p>
+                <p>Descrição do Evento 1</p>
+                <p>13/04/2022 - 09:15 - Evento 1</p>
+                <p>Descrição do Evento 2</p>
+                <p>14/04/2022 - 10:15 - Evento 1</p>
+                <p>Descrição do Evento 3</p>
+                <p>15/04/2022 - 11:15 - Evento 1</p>
+                <p>Descrição do Evento 4</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">FECHAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dicas -->
+<div class="modal fade" id="Dicas" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Dicas</h5>
+                <button type="button" class="close" data-dismiss="modal"></button>
+                <!--<span>X</span>
+                <span>&times;</span>-->
+            </div>
+            <div class="modal-body">
+                <p class="text-justify">Mantenha uma atividade física, lembre-se que precisamos nos manter ativos.</p>
+                <p class="text-justify">Uma boa alimentação ajuda a manter nosso corpo sadio e aumenta nossa imunidade.
+                </p>
+                <p class="text-justify">Uma boa noite de sono restaura nossas energia para o próximo dia.</p>
+                <p class="text-justify">Não descuide de sua vida religiosa. Lembre-se que temos um Deus todo poderoso
+                    que está sempre a nos ajudar, portanto não descuide do alimento espiritual.</p>
+                <p class="text-justify">Lembre-se que também precisamos de lazer. O trabalho é importante mas não
+                    adianta apenas viver para o trabalho, afinal nosso tempo é curto, por isso aproveite tudo o que a
+                    vida oferece, lembre-se de separar o bem do mal. Tudo podemos, mas nem tudo nos convém.</p>
+                <p class="text-justify">Um bom relacionamento com os amigos também é de suma importância. Não se isole,
+                    nem os animais gostam de viverem sozinhos.</p>
+                <p class="text-justify">Não se esqueça de amparar seus pais na velhice, afinal foram eles que sempre
+                    estiveram ao seu lado principalmente nos momentos em que mais você precisou.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">FECHAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Apoiadores -->
+<div class="modal fade" id="Apoiadores" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Apoiadores</h5>
+                <button type="button" class="close" data-dismiss="modal"></button>
+                <!--<span>X</span>
+                <span>&times;</span>-->
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4 mt-3">
+                                <img src="imagens/emp1.png" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Empresa 1</h5>
+                                    <p class="card-text text-justify">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4 mt-3">
+                                <img src="imagens/emp2.png" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Empresa 2</h5>
+                                    <p class="card-text text-justify">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4 mt-3">
+                                <img src="imagens/emp3.png" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Empresa 3</h5>
+                                    <p class="card-text text-justify">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">FECHAR</button>
+            </div>
+        </div>
+    </div>
 </div>
