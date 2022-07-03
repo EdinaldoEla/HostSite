@@ -29,13 +29,17 @@ namespace Hotsite.Controllers
             try{
                 DatabaseService dbs = new DatabaseService();
                 dbs.CadastraInteresse(cad);
-                ViewData["Mensagem"] = "Cadastro realizado com sucesso!";
+                //ViewData["Mensagem"] = "Cadastro realizado com sucesso!";
+
+                return Json( new { status="OK" } );
+
             }catch(Exception e){
                 _logger.LogError("Erro ao gravar no banco" + e.Message);
-                 ViewData["Mensagem"] = "Erro ao cadastrar. Tente mais tarde.";
+                //ViewData["Mensagem"] = "Erro ao cadastrar. Tente mais tarde.";
+                return Json( new { status="ERROR", mensagem="Falha ao Cadastrar!" } );
             }
-           
-            return View("Index",cad);
+            
+            //return View("Index",cad);
         }
 
     }
